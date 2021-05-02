@@ -1,4 +1,4 @@
-var canvas, ctx, counter, x, y, i, j, start1, start2, tileTemp, direction;
+var canvas, ctx, counter, x, y, i, j, start1, start2, tileTemp, direction, newTileTemp;
 var tileX = [1, 2, 3, 4];
 var tileY = [1, 2, 3, 4];
 var tileSize = 130;
@@ -38,8 +38,9 @@ function logKey(e) {
     if (e.code == "KeyD") {
         direction = "RIGHT";
     }
-    if (values[Math.floor(randomNumber(1, 4)) + "" + Math.floor(randomNumber(1, 4))] == null) {
-        values[Math.floor(randomNumber(1, 6)) + "" + Math.floor(randomNumber(1, 6))] = 2;
+    newTileTemp = Math.floor(randomNumber(1, 4)) + "" + Math.floor(randomNumber(1, 4));
+    if (values[newTileTemp] == null) {
+        values[newTileTemp] = 2;
     }
 }
 function draw() {
